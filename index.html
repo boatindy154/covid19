@@ -32,6 +32,8 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet">
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54b36e5d17.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -132,11 +134,13 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box orange-bg">
-                            <i class="fa fa-cloud-download"></i>
+                            <i class="fa fas fa-biohazard"></i>
                             <tbody id="data">
                             </tbody>
                             <!-- <div class="count" id="data"></div> -->
+                            <div class="count" id="totalconfirm"></div>
                             <div class="title">Total Confirmed</div>
+
                         </div>
                         <!--/.info-box-->
                     </div>
@@ -144,8 +148,8 @@
 
                     <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box red-bg">
-                            <i class="fa fa-shopping-cart"></i>
-                            <div class="count">7.538</div>
+                            <i class="fa fas fa-skull-crossbones"></i>
+                            <div class="count" id="totaldeaths"></div>
                             <div class="title">Total Deaths</div>
                         </div>
                         <!--/.info-box-->
@@ -155,7 +159,7 @@
                     <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box green-bg">
                             <i class="fa fa-thumbs-o-up"></i>
-                            <div class="count">4.362</div>
+                            <div class="count" id="totalrecovered"></div>
                             <div class="title">Total Recovered</div>
                         </div>
                         <!--/.info-box-->
@@ -233,6 +237,7 @@
         <script src="js/sparklines.js"></script>
         <script src="js/charts.js"></script>
         <script src="js/jquery.slimscroll.min.js"></script>
+        <script src="index.js"></script>
         <script>
             //knob
             $(function() {

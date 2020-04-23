@@ -1,11 +1,31 @@
 $(function() {
-
     var url = "https://pomber.github.io/covid19/timeseries.json";
-    var nowConfirmed = selectedCountry[(selectedCountry.length) - 1].confirmed;
-    var nowDeaths = selectedCountry[(selectedCountry.length) - 1].deaths;
-    var nowRecovered = selectedCountry[(selectedCountry.length) - 1].recovered;
-    $("#nowConfirmed").append(nowConfirmed);
-    $("#nowDeaths").append(nowDeaths);
-    $("#nowRecovered").append(nowRecovered);
+    $.getJSON(url, function(result) {
+        console.log(result);
+        var no = 1;
+        var all = 0;
+        for (var country in result) {
+            var selectedCountry = result[country];
+            var total = selectedCountry.length;
+            all = all + selectedCountry[total - 1].confirmed;
+        }
+        console.log(all);
+        $("#totalconfirm").append(all);
 
+        for (var country in result) {
+            var selectedCountry = result[country];
+            var total = selectedCountry.length;
+            all = all + selectedCountry[total - 1].deaths;
+        }
+        console.log(all);
+        $("#totaldeaths").append(all);
+
+        for (var country in result) {
+            var selectedCountry = result[country];
+            var total = selectedCountry.length;
+            all = all + selectedCountry[total - 1].recovered;
+        }
+        console.log(all);
+        $("#totalrecovered").append(all);
+    });
 });
